@@ -5,11 +5,11 @@ import { CustomChip } from '..';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: theme.spacing(3, 2),
+    margin: theme.spacing(3, 'auto'),
   },
   content: {
-    maxWidth: 500,
-    margin: theme.spacing(1, 3),
+    maxWidth: 400,
+    margin: theme.spacing(1, 'auto'),
     '& > *': {
       margin: theme.spacing(1),
     }

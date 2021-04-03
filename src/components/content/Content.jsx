@@ -8,18 +8,19 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3),
   },
   image: {
+    height: 400,
     [theme.breakpoints.down('sm')]: {
       height: 300,
     },
   },
   content: {
-    margin: theme.spacing(14, 0, 0, 18),
+    margin: theme.spacing(13, 0, 0, 7),
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(2),
     },
   },
   header: {
-    fontWeight: 800,
+    fontWeight: 600,
     [theme.breakpoints.down('sm')]: {
       fontWeight: 500,
     },
