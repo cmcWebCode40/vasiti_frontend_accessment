@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { CssBaseline } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+import Home from './pages/Home';
+import theme from './themes/theme';
+import ContextProvider from './context/ContextApi';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ContextProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Home />
+      </ThemeProvider>
+    </ContextProvider>
+
+  )
 }
 
-export default App;
+export default App
