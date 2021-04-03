@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     color: theme.palette.white,
     margin: theme.spacing(1, 0),
-    fontSize: theme.typography.pxToRem('15')
+    fontSize: theme.typography.pxToRem('12')
   }
   ,
   gridContainer: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   socialLinks: {
     margin: theme.spacing(1, 0),
     '& >*': {
-      margin: theme.spacing(1.5),
+      margin: theme.spacing(1, 'auto'),
     }
   }
 }));
@@ -36,7 +36,7 @@ const FooterLinks = () => {
       className={classes.root}
     >
       <Grid item md={2}>
-        <Typography className={classes.ftHeader} variant="h5" component="h6">
+        <Typography className={classes.ftHeader} variant="h6" >
           Company
         </Typography>
         {company.map(list => (
@@ -49,7 +49,7 @@ const FooterLinks = () => {
       </Grid>
       <Grid item md={2}>
         <Typography className={classes.ftHeader}
-          variant="h5" component="h6">
+          variant="h6" >
           Products
         </Typography>
         {products.map(list => (
@@ -61,7 +61,7 @@ const FooterLinks = () => {
       </Grid>
       <Grid item md={2}>
         <Typography className={classes.ftHeader}
-          variant="h5" component="h6">
+          variant="h6" >
           Careers
         </Typography>
         {careers.map(list => (
@@ -73,7 +73,7 @@ const FooterLinks = () => {
       </Grid>
       <Grid item md={2}>
         <Typography className={classes.ftHeader}
-          variant="h5" component="h6">
+          variant="h6" >
           Get In Touch
         </Typography>
         {GetInTouch.map(list => (
@@ -85,7 +85,7 @@ const FooterLinks = () => {
       </Grid>
       <Grid className={classes.socialLinks} item md={2}>
         <Typography className={classes.ftHeader}
-          variant="h5" component="h6">
+          variant="h6" >
           Join Our Community
         </Typography>
         {socialLinks.map(list => (
@@ -94,7 +94,7 @@ const FooterLinks = () => {
           </Fragment>
         ))}
         <Typography className={classes.ftHeader}
-          variant="h6" component="h6">
+          variant="h6" >
           Email Newsletter
           </Typography>
       </Grid>

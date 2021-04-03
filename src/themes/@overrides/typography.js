@@ -1,4 +1,4 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  fontFamily: ['Poppins', 'sans-serif'].join(',')
+  fontFamily: ['Inter', 'sans-serif'].join(',')
 }
