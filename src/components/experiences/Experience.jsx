@@ -5,18 +5,18 @@ import CustomChip from '../CustomChip';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // margin: theme.spacing(3),
+    padding: theme.spacing(2),
   },
   gridContainer: {
     flexGrow: 1,
     margin: theme.spacing(3),
-    '& >*': {
-      // margin: theme.spacing(0, .4),
-    }
   },
   content: {
     margin: theme.spacing(0),
-    maxWidth: 500
+    maxWidth: 500,
+    '& >*': {
+      margin: theme.spacing(1.5, 0),
+    }
   },
   image: {
     [theme.breakpoints.down('sm')]: {

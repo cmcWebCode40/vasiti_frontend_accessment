@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
-import { ContextApi, STORIES } from '../../../../context/ContextApi';
+import { ContextApi, STORIES, getAllStories } from '../../../../context/ContextApi';
+
 
 const initialState = {
   firstName: '',
@@ -9,9 +10,6 @@ const initialState = {
   type: 'customer',
 }
 
-const saveStory = (stories) => {
-  localStorage.setItem(STORIES, JSON.stringify(stories))
-}
 const useStories = () => {
   const [values, setValues] = useState(initialState);
   const [image, setImage] = useState('');
@@ -38,19 +36,17 @@ const useStories = () => {
       id: Math.random(),
       imgSrc: imageLink
     };
-    // if (stories.length) {
-    //   setStories(items);
-    //   saveStory(items);
-    //   // localStorage.setItem(STORIES, JSON.stringify(items))
-    // } else {
-    //   setStories([data]);
-    //   saveStory([data]);
-    // }
-    // setIsLoading(!isLoading);
-    // setIsSuccess(!isSuccess);
+    const items = getAllStories();
+    localStorage.setItem(STORIES, JSON.stringify([...items, data]))
+    if (stories.length) {
+      setStories([...stories, data]);
+    } else {
+      setStories([data]);
+    }
+    setIsLoading(false);
+    setIsSuccess(!isSuccess);
   }
 
-  console.log(stories);
 
   const cloudImageUpload = async (e) => {
     e.preventDefault();
@@ -59,8 +55,7 @@ const useStories = () => {
     data.append('file', image);
     data.append('upload_preset', 'Visita');
     try {
-      // process.env.REACT_APP_CLOUDINARY_BASE_URL
-      const res = await fetch('https://api.cloudinary.com/v1_1/cmcwebcode/image/upload', {
+      const res = await fetch(process.env.REACT_APP_CLOUDINARY_BASE_URL, {
         method: 'POST',
         body: data,
       })
@@ -71,6 +66,8 @@ const useStories = () => {
       setMessage('Something went wrong');
     }
   }
+
+
   return {
     image,
     values,
@@ -82,7 +79,6 @@ const useStories = () => {
     handleChange,
     setIsSuccess,
     cloudImageUpload,
-
   }
 }
 
