@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
     }
+  },
+  img: {
+    borderRadius: '50%',
+    height: 200,
+    width: 200
   }
 }));
 
